@@ -282,7 +282,7 @@ button:active,
 
 @media (min-width: 1440px) {
   .circle::before {
-    left: 36%;
+    left: 2.3vw;
   }
   .circle::after {
     width: 8.5vw;
