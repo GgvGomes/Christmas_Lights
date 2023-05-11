@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+/* ================================================================================ */
+
 body,
 html {
   height: 100%;
@@ -41,14 +43,16 @@ body {
 /* ========================== utilities Buttons ============================== */
 
 .utilities button {
-  height: 70px;
-  width: 70px;
+  height: 4vw;
+  width: 4vw;
   background: none;
   color: whitesmoke;
 
+  font-size: 1vw;
+
   outline: none;
   border: 2px solid rgb(184, 134, 222);
-  border-radius:50%;
+  border-radius: 50%;
   margin: 0 12px;
 }
 
@@ -58,8 +62,9 @@ body {
 }
 
 .utilities #quantity {
-  width: 180px;
-  height: 50px;
+  width: 8vw;
+  height: 3vw;
+  font-size: 0.8vw;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   outline: none;
@@ -69,8 +74,9 @@ body {
 }
 
 .utilities #submit {
-  height: 50px;
-  width: 70px;
+  height: 3vw;
+  width: 4vw;
+  font-size: 0.8vw;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border: 2px solid rgb(184, 134, 222);
@@ -94,7 +100,7 @@ button:active,
 .title {
   font-family: "Cinzel", sans-serif;
   letter-spacing: 2px;
-  font-size: 3rem;
+  font-size: 3vw;
   text-align: center;
   text-shadow: 0 0 30px white;
 }
@@ -235,5 +241,126 @@ button:active,
   75% {
     text-shadow: 0 0 20px #fff, 0 0 30px #2ecc71, 0 0 40px #2ecc71, 0 0 50px #2ecc71,
       0 0 60px #2ecc71, 0 0 70px #2ecc71, 0 0 80px #2ecc71;
+  }
+}
+
+/* ================================= Resposivo ==================================== */
+@media (min-width: 2560px) {
+  .circle::before {
+    left: 38%;
+  }
+  .circle::after {
+    width: 140px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .circle::before {
+    left: 31%;
+  }
+  .circle::after {
+    width: 90px;
+    left: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .circle {
+    height: 6vw;
+    width: 6vw;
+  }
+  .circle::before {
+    left: 33%;
+  }
+  .circle::after {
+    width: 98px;
+    left: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .circle {
+    height: 8vw;
+    width: 8vw;
+  }
+  .circle::before {
+    left: 33%;
+  }
+  .circle::after {
+    width: 98px;
+    left: 40%;
+  }
+
+  .title {
+    font-size: 4vw;
+  }
+
+  .utilities button {
+    height: 8vw;
+    width: 8vw;
+
+    font-size: 2vw;
+  }
+
+  .utilities #quantity {
+    height: 6vw;
+    width: 20vw;
+    font-size: 2vw;
+  }
+
+  .utilities #submit {
+    height: 6vw;
+    width: 7vw;
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 425px) {
+  .circle {
+    height: 9vw;
+    width: 9vw;
+    margin: 0.5rem;
+  }
+
+  .circle::before {
+    left: 32%;
+    width: 3vw;
+    height: 4vw;
+    top: -4.3vw;
+    border-bottom: 1vw solid rgb(97, 81, 107);
+  }
+  .circle::after {
+    width: 13vw;
+    top: -7.3vw;
+  }
+
+  .utilities {
+    top: 0;
+  }
+
+  .title {
+    font-size: 7vw;
+  }
+
+  .utilities button {
+    height: 12vw;
+    width: 12vw;
+
+    font-size: 3vw;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0 6px;
+  }
+
+  .utilities #quantity {
+    height: 8vw;
+    width: 26vw;
+    font-size: 3vw;
+  }
+
+  .utilities #submit {
+    height: 8vw;
+    width: 10vw;
+    font-size: 3vw;
   }
 }
