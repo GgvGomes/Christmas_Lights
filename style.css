@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   height: 100%;
@@ -6,278 +10,148 @@ html {
 }
 
 body {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-
-  background-color: rgb(0, 0, 0);
-  /* background-color: rgb(163, 215, 238); */
-}
-
-/* =========================================================================== */
-
-.container {
+  background: rgb(25, 21, 26);
   display: flex;
   flex-direction: column;
-}
-
-.grid_btns {
-  display: flex;
-  justify-content: space-between;
-
-  margin-bottom: 20px;
-}
-
-button {
-  width: 10vw;
-  height: 3vw;
-
-  border-radius: 20px;
-  border: none;
-
-  color: #736bbb;
-  background-color: transparent;
-  font-size: larger;
-  position: relative;
-  /* background-color: #736BBB; */
-
+  min-height: 100vh;
+  margin: 0;
   overflow: hidden;
+}
+
+/* ========================== Balls ============================== */
+
+.main {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 20vh;
 }
 
-button > span {
-  letter-spacing: 4px;
-  font-weight: 600;
-  position: relative;
-  z-index: 8;
-}
-
-button::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  background: #262240;
-  border-radius: 2px;
-}
-
-button::before {
-  height: 300%;
-  content: "";
-  position: absolute;
-  width: 30px;
-
-  background: linear-gradient(#262240 52%, #736bbb);
-  animation: animate 2s linear infinite;
-}
-
-button:hover::before,
-button:hover::after {
-  background: #8174fa;
-
-  -webkit-box-shadow: 0 0 40px #8174fa;
-  -moz-box-shadow: 0 0 40px #8174fa;
-  box-shadow: 0 0 40px #8174fa;
-  -moz-border-radius: 100px / 10px;
-  border-radius: 100px / 10px;
-}
-button:hover {
-  background-color: #8174fa;
-  color: aliceblue;
-
-  -webkit-box-shadow: 0 1px 40px #8174fa, 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 1px 40px #8174fa, 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  box-shadow: 0 1px 40px #8174fa, 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
-
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* =========================================================================== */
-
-.lights {
+.circle {
   display: flex;
-  gap: 1vw;
-}
-
-.light {
-  width: 6vw;
-  height: 6vw;
+  margin: 1rem;
   border-radius: 50%;
-
-  background-color: green;
-
-  box-shadow: -3px 4px 12px rgba(0, 0, 0, 0.5);
-  opacity: 0.6;
-
+  height: 4vw;
+  width: 4vw;
+  background: green;
+  /* background: rgba(0, 0, 0, 0.3); */
   position: relative;
-  box-shadow: 0px 4.6666666667px 24px 3px #515353;
 }
 
-.light > .top_ball{
-    position: absolute;
-    
-    width: 1vw;
-    height: 0.8vw;
-    background-color: #e0ac47;
-    left: 40%;
-    top: -6px;
-    border-radius: 50% 50% 72% 72%;
-    opacity: 1;
-}
-.top_ball::before{
-    content: "";
-    position: absolute;
-    
-    background-color: #e0ac47;
-    
-    width: 2px;
-    height: 1vw;
-    
-    left: 40%;
-    top: -10px;
-    border-radius: 50%;
-}
-.top_ball::after{
-    content: "";
-    position: absolute;
-    
-    background-color: #e0ac47;
-    
-    width: 10px;
-    height: 2px;
-    
-    left: 50%;
-    top: -10px;
-    border-radius: 20%;
-    border-right: 1px solid green;
+.circle::before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 20px;
+  left: 27px;
+  top: -24px;
+
+  background: rgb(68, 53, 73);
+  border-radius: 4px 2px;
+  display: inline-block;
+
+  border-bottom: 3px solid rgb(97, 81, 107);
 }
 
-.light_1 {
-  background: linear-gradient(red, rgb(218, 79, 79));
+.circle::after {
+  position: absolute;
+  content: "";
+  top: -36px;
+  left: 40px;
+
+  width: 100px;
+  height: 18px;
+  border-bottom: solid #353232 2px;
+  border-radius: 50%;
 }
 
-.light_2 {
-  background: linear-gradient(orange, rgb(228, 173, 71));
+.circle:last-child::after {
+  content: "";
+  position: absolute;
+  border: none;
 }
 
-.light_3 {
-  background: linear-gradient(yellow, rgb(219, 219, 83));
+/* ============================= Colors ========================== */
+.red {
+  background-color: #c0392b;
+  animation: glow-1 1s infinite;
 }
 
-.light_4 {
-  background: linear-gradient(green, rgb(78, 231, 78));
+.yellow {
+  background-color: #f1c40f;
+  animation: glow-2 1s infinite;
 }
 
-.light_5 {
-  background: linear-gradient(rgb(75, 180, 246), rgb(165, 216, 248));
+.blue {
+  background-color: #64fcfe;
+  animation: glow-3 1s infinite;
 }
 
-.light_6 {
-  background: linear-gradient(blue, rgb(79, 79, 245));
+.green {
+  background-color: #2ecc71;
+  animation: glow-4 1s infinite;
 }
 
-.light_7 {
-  background: linear-gradient(blueviolet, rgb(180, 115, 241));
-}
+/* ============================= Colors ========================== */
 
-@keyframes ball_flash_1 {
+@keyframes glow-1 {
   0%,
   100% {
-    opacity: 1;
-    /* box-shadow: 0px 0px 8px 4px red; */
-    -webkit-box-shadow: 0 0 30px red;
-    -moz-box-shadow: 0 0 30px red;
-    box-shadow: 0 0 30px red;
+    box-shadow: 0 0 20px 5px #c0392b;
   }
   50% {
-    opacity: 0.5;
+    box-shadow: none;
   }
 }
-@keyframes ball_flash_2 {
+
+@keyframes glow-2 {
   0%,
   100% {
-    opacity: 1;
-    /* box-shadow: 0px 0px 8px 4px orange; */
-    -webkit-box-shadow: 0 0 30px orange;
-    -moz-box-shadow: 0 0 30px orange;
-    box-shadow: 0 0 30px orange;
+    box-shadow: none;
   }
   50% {
-    opacity: 0.5;
+    box-shadow: 0 0 20px 5px #f1c40f;
   }
 }
-@keyframes ball_flash_3 {
+
+@keyframes glow-3 {
   0%,
   100% {
-    opacity: 1;
-    /* box-shadow: 0px 0px 8px 4px yellow; */
-    -webkit-box-shadow: 0 0 30px yellow;
-    -moz-box-shadow: 0 0 30px yellow;
-    box-shadow: 0 0 30px yellow;
+    box-shadow: 0 0 20px 5px #74f7e1;
   }
   50% {
-    opacity: 0.5;
+    box-shadow: none;
   }
 }
-@keyframes ball_flash_4 {
+
+@keyframes glow-4 {
   0%,
   100% {
-    opacity: 1;
-    /* box-shadow: 0px 0px 8px 4px green; */
-    -webkit-box-shadow: 0 0 30px green;
-    -moz-box-shadow: 0 0 30px green;
-    box-shadow: 0 0 30px green;
+    box-shadow: none;
   }
   50% {
-    opacity: 0.5;
+    box-shadow: 0 0 20px 5px #2ecc71;
   }
 }
-@keyframes ball_flash_5 {
+
+@-webkit-keyframes main-glow {
   0%,
   100% {
-    opacity: 1;
-    /* box-shadow: 0px 0px 8px 4px rgb(75, 180, 246); */
-    -webkit-box-shadow: 0 0 30px rgb(75, 180, 246);
-    -moz-box-shadow: 0 0 30px rgb(75, 180, 246);
-    box-shadow: 0 0 30px rgb(75, 180, 246);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073,
+      0 0 50px #c0392b, 0 0 60px #c0392b, 0 0 70px #c0392b;
+  }
+  25% {
+    text-shadow: 0 0 20px #fff, 0 0 30px #f1c40f, 0 0 40px #ff4da6, 0 0 50px #f1c40f,
+      0 0 60px #f1c40f, 0 0 70px #f1c40f, 0 0 80px #ff4da6;
   }
   50% {
-    opacity: 0.5;
+    text-shadow: 0 0 20px #fff, 0 0 30px #74f7e1, 0 0 40px #74f7e1, 0 0 50px #74f7e1,
+      0 0 60px #74f7e1, 0 0 70px #74f7e1, 0 0 80px #74f7e1;
   }
-}
-@keyframes ball_flash_6 {
-  0%,
-  100% {
-    opacity: 1;
-    /* box-shadow: 0px 0px 8px 4px blue; */
-    -webkit-box-shadow: 0 0 30px blue;
-    -moz-box-shadow: 0 0 30px blue;
-    box-shadow: 0 0 30px blue;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-@keyframes ball_flash_7 {
-  0%,
-  100% {
-    opacity: 1;
-    /* box-shadow: 0px 0px 8px 4px blueviolet; */
-    -webkit-box-shadow: 0 0 30px blueviolet;
-    -moz-box-shadow: 0 0 30px blueviolet;
-    box-shadow: 0 0 30px blueviolet;
-  }
-  50% {
-    opacity: 0.5;
+  75% {
+    text-shadow: 0 0 20px #fff, 0 0 30px #2ecc71, 0 0 40px #2ecc71, 0 0 50px #2ecc71,
+      0 0 60px #2ecc71, 0 0 70px #2ecc71, 0 0 80px #2ecc71;
   }
 }
