@@ -4,6 +4,10 @@ function Snow_Rain() {
     for (let i = 0; i < 200; i++) {
         const li = document.createElement("li");
 
+        const size = Math.floor(Math.random() * (12 - 5) + 1);
+        li.style.width = `${size}px`;
+        li.style.height = `${size}px`;
+
         const duration = Math.random() * (24 - 12) + 12
         li.style.animationDuration = `${duration}s`
 
