@@ -17,10 +17,13 @@ function Snow_Rain() {
         const delay = Math.random() * (5 - 0.1) + 0.1
         li.style.animationDelay = `${delay}s`;
 
-        li.style.animationTimingFunction = `cubic-bezier(${Math.random(), Math.random(), Math.random(), Math.random()})`;
+        // li.style.animationTimingFunction = `cubic-bezier(${Math.random(), Math.random(), Math.random(), Math.random()})`;
 
         ulRain.appendChild(li)
     }
 }
 
 Snow_Rain();
+
+// Para a neve ficar pararada ela tem q encontrar o objeto e ficar parada na posição dele
+// https://codepen.io/onion2k/pen/BGrXEO
