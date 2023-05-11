@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Christmas Lights</title>
-</head>
-<body>
-    <div class="Teste">asdasd</div>
+  </head>
+  <body>
+    <div class="container">
+      <div class="grid_btns">
+          <button id="button_speed"><span>Change speed</span></button>
+          
+          <!-- Rounded switch -->
+          <label class="switch">
+            <input type="checkbox" onchange="On_off_balls()"/>
+            <span class="slider round"></span>
+        </label>
+      </div>
 
+      <div class="lights">
+        <div class="light light_1">
+          <div class="top_ball"></div>
+        </div>
+        <div class="light light_2">
+          <div class="top_ball"></div>
+        </div>
+        <div class="light light_3">
+          <div class="top_ball"></div>
+        </div>
+        <div class="light light_4">
+          <div class="top_ball"></div>
+        </div>
+        <div class="light light_5">
+          <div class="top_ball"></div>
+        </div>
+        <div class="light light_6">
+          <div class="top_ball"></div>
+        </div>
+        <div class="light light_7">
+          <div class="top_ball"></div>
+        </div>
+      </div>
+    </div>
 
-    <link rel="stylesheet" href="./stryle.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./switch.css" />
 
-    <script type="module" src="./index.js" ></script>
-</body>
+    <script type="text/javascript" src="./script.js" ></script>
+  </body>
 </html>
