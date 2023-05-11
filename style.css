@@ -18,6 +18,36 @@ body {
   overflow: hidden;
 }
 
+/* ========================== utilities ============================== */
+.utilities{
+    width: 100vw;
+    padding: 1rem;
+    color: white;
+    font-family: 'Lato',sans-serif;
+    position: absolute;
+
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========================== Title ============================== */
+
+.title{
+    font-family: 'Cinzel', sans-serif;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 0 30px white;
+}
+
 /* ========================== Balls ============================== */
 
 .main {
@@ -45,8 +75,8 @@ body {
   content: "";
   height: 24px;
   width: 20px;
-  left: 27px;
-  top: -24px;
+  left: 27.5px;
+  top: -25px;
 
   background: rgb(68, 53, 73);
   border-radius: 4px 2px;
@@ -58,10 +88,10 @@ body {
 .circle::after {
   position: absolute;
   content: "";
-  top: -36px;
+  top: -37px;
   left: 40px;
 
-  width: 100px;
+  width: 104px;
   height: 18px;
   border-bottom: solid #353232 2px;
   border-radius: 50%;
