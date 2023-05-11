@@ -2,7 +2,27 @@
   box-sizing: border-box;
 }
 
-/* ================================================================================ */
+/* ============================== Snow Rain ========================================== */
+ul.rain > li {
+  position: absolute;
+  z-index: 1;
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+
+  background-color: aliceblue;
+  top: -40px;
+  animation: down infinite;
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
 
 body,
 html {
@@ -18,6 +38,7 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow: hidden;
+  position: relative;
 }
 
 /* ========================== utilities ============================== */
@@ -245,25 +266,6 @@ button:active,
 }
 
 /* ================================= Resposivo ==================================== */
-@media (min-width: 2560px) {
-  .circle::before {
-    left: 38%;
-  }
-  .circle::after {
-    width: 140px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .circle::before {
-    left: 31%;
-  }
-  .circle::after {
-    width: 90px;
-    left: 40%;
-  }
-}
-
 @media (min-width: 1024px) {
   .circle {
     height: 6vw;
@@ -275,6 +277,25 @@ button:active,
   .circle::after {
     width: 98px;
     left: 40%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .circle::before {
+    left: 36%;
+  }
+  .circle::after {
+    width: 8.5vw;
+    left: 40%;
+  }
+}
+
+@media (min-width: 2560px) {
+  .circle::before {
+    left: 38%;
+  }
+  .circle::after {
+    width: 140px;
   }
 }
 
